@@ -16,8 +16,8 @@ class Person():
         print(f"Name: {self.name}, Age: {self.age}, Gender: {self.gender}")
 
 class Student(Person):
-    def __init__(self, name, age, gender, student_id):
-        super().__init__(name, age, gender)
+    def __init__(self, name, age, gender, student_id, course):
+        super().__init__(name, age, gender, student_id, course)
         self.student_id = student_id
         self.grades = []
         self.avg = 0
@@ -32,7 +32,7 @@ class Student(Person):
     
     def calcavg(self):
         self.avg = (sum(int(self.grades)) / len(self.grades))
-        return self.avg
+        print(f"{self.avg} is your average grade")
     
     def get_summary(self):
         print(f"Your name is {self.name}")
@@ -41,7 +41,7 @@ class Student(Person):
         print(f"Your course is {self.course}")
 
 human = Person("Jokubas", 16, "Male")
-stu = Student()
+stu = Student(Person, "S1234", "Engineering")
 stu.get_summary()
 
 
